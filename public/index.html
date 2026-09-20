@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Luna Developer Portal</title>
+
+  <link rel="stylesheet" href="/app.css">
+</head>
+
+<body>
+
+  <div class="background"></div>
+
+  <main class="container">
+
+    <header class="header">
+      <div class="logo">
+        <div class="logo-mark">L</div>
+
+        <div>
+          <h1>Luna</h1>
+          <p>Developer Portal</p>
+        </div>
+      </div>
+
+      <div class="status">
+        <span></span>
+        API Online
+      </div>
+    </header>
+
+
+    <section class="hero">
+
+      <div class="badge">
+        LUNA API
+      </div>
+
+      <h2>
+        Build with Luna.
+      </h2>
+
+      <p>
+        Connect Luna AI to your Roblox games, websites, apps,
+        and other projects using your Luna API key.
+      </p>
+
+    </section>
+
+
+    <section class="card">
+
+      <div class="card-header">
+        <div>
+          <h3>API Key</h3>
+
+          <p>
+            Create a key to start using Luna.
+          </p>
+        </div>
+
+        <div class="key-icon">
+          🔑
+        </div>
+      </div>
+
+
+      <button id="createKeyButton">
+        Create Luna API Key
+      </button>
+
+
+      <div id="loading" class="hidden">
+        Creating your key...
+      </div>
+
+
+      <div id="keyArea" class="hidden">
+
+        <label>Your Luna API Key</label>
+
+        <div class="key-box">
+
+          <code id="apiKey"></code>
+
+          <button id="copyButton">
+            Copy
+          </button>
+
+        </div>
+
+        <p class="warning">
+          Keep this key private. Anyone who has it can use your
+          Luna API access.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <section class="card">
+
+      <div class="card-header">
+
+        <div>
+          <h3>How Luna works</h3>
+
+          <p>
+            Your key connects your project to Luna.
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="flow">
+
+        <div class="flow-item">
+          <strong>Your Project</strong>
+          <span>Roblox / Web / App</span>
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="flow-item">
+          <strong>Luna API</strong>
+          <span>Your Luna key</span>
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="flow-item">
+          <strong>Luna</strong>
+          <span>Fixed personality</span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="card">
+
+      <div class="card-header">
+
+        <div>
+          <h3>Quick Start</h3>
+
+          <p>
+            Send a message to Luna from your server.
+          </p>
+        </div>
+
+      </div>
+
+
+      <pre><code>POST /v1/chat
+
+Authorization: Bearer YOUR_LUNA_API_KEY
+Content-Type: application/json
+
+{
+  "message": "Hello Luna!"
+}</code></pre>
+
+
+      <h4>Example response</h4>
+
+      <pre><code>{
+  "response": "Hello! I'm Luna..."
+}</code></pre>
+
+    </section>
+
+
+    <section class="card">
+
+      <div class="card-header">
+
+        <div>
+          <h3>Roblox</h3>
+
+          <p>
+            Keep your Luna API key on the Roblox server.
+            Never put it inside a LocalScript.
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="notice">
+        <strong>Important</strong>
+
+        <span>
+          Your Luna API key is a secret. Do not expose it
+          to players or put it in client-side code.
+        </span>
+      </div>
+
+    </section>
+
+
+    <footer>
+      Luna AI Developer Portal
+    </footer>
+
+  </main>
+
+
+  <script src="/app.js"></script>
+
+</body>
+</html>
