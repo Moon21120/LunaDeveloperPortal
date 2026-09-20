@@ -16,21 +16,29 @@
   <main class="container">
 
     <header class="header">
+
       <div class="logo">
-        <div class="logo-mark">L</div>
+
+        <div class="logo-mark">
+          L
+        </div>
 
         <div>
           <h1>Luna</h1>
           <p>Developer Portal</p>
         </div>
+
       </div>
 
       <div class="status">
         <span></span>
         API Online
       </div>
+
     </header>
 
+
+    <!-- HERO -->
 
     <section class="hero">
 
@@ -43,27 +51,36 @@
       </h2>
 
       <p>
-        Connect Luna AI to your Roblox games, websites, apps,
-        and other projects using your Luna API key.
+        Connect Luna AI to websites, applications, games,
+        bots, tools, and other projects using the Luna API.
       </p>
 
     </section>
 
 
+    <!-- CREATE API KEY -->
+
     <section class="card">
 
       <div class="card-header">
+
         <div>
-          <h3>API Key</h3>
+
+          <h3>
+            API Key
+          </h3>
 
           <p>
-            Create a key to start using Luna.
+            Create a Luna API key to authenticate your
+            project with the Luna API.
           </p>
+
         </div>
 
         <div class="key-icon">
           🔑
         </div>
+
       </div>
 
 
@@ -79,7 +96,9 @@
 
       <div id="keyArea" class="hidden">
 
-        <label>Your Luna API Key</label>
+        <label>
+          Your Luna API Key
+        </label>
 
         <div class="key-box">
 
@@ -92,8 +111,9 @@
         </div>
 
         <p class="warning">
-          Keep this key private. Anyone who has it can use your
-          Luna API access.
+          Keep this key private. Anyone who has your key
+          can make authenticated requests to the Luna API
+          using your API access.
         </p>
 
       </div>
@@ -101,17 +121,86 @@
     </section>
 
 
+    <!-- HOW API KEYS WORK -->
+
     <section class="card">
 
       <div class="card-header">
 
         <div>
-          <h3>How Luna works</h3>
+
+          <h3>
+            How your API key works
+          </h3>
 
           <p>
-            Your key connects your project to Luna.
+            Your Luna API key is used to authenticate
+            requests from your project.
           </p>
+
         </div>
+
+      </div>
+
+
+      <div class="info-block">
+
+        <h4>
+          1. Create your key
+        </h4>
+
+        <p>
+          When you create a Luna API key, Luna generates
+          a unique credential for your project. This key
+          identifies your requests as authorized Luna API
+          requests.
+        </p>
+
+      </div>
+
+
+      <div class="info-block">
+
+        <h4>
+          2. Your project sends the key
+        </h4>
+
+        <p>
+          When your application wants Luna to respond,
+          your server sends the API key with the request.
+          The key is normally sent using the
+          <strong>Authorization</strong> header.
+        </p>
+
+      </div>
+
+
+      <div class="info-block">
+
+        <h4>
+          3. Luna verifies the key
+        </h4>
+
+        <p>
+          The Luna API checks the key before processing
+          the request. If the key is missing or invalid,
+          the request is rejected.
+        </p>
+
+      </div>
+
+
+      <div class="info-block">
+
+        <h4>
+          4. Luna processes your request
+        </h4>
+
+        <p>
+          Once the request is authenticated, Luna processes
+          your message using Luna's permanent personality
+          and returns the response to your application.
+        </p>
 
       </div>
 
@@ -120,17 +209,30 @@
 
         <div class="flow-item">
           <strong>Your Project</strong>
-          <span>Roblox / Web / App</span>
+          <span>Your website, app, game, bot, or tool</span>
         </div>
 
-        <div class="arrow">→</div>
+        <div class="arrow">
+          →
+        </div>
+
+        <div class="flow-item">
+          <strong>Luna API Key</strong>
+          <span>Authenticates your request</span>
+        </div>
+
+        <div class="arrow">
+          →
+        </div>
 
         <div class="flow-item">
           <strong>Luna API</strong>
-          <span>Your Luna key</span>
+          <span>Verifies the key</span>
         </div>
 
-        <div class="arrow">→</div>
+        <div class="arrow">
+          →
+        </div>
 
         <div class="flow-item">
           <strong>Luna</strong>
@@ -142,16 +244,83 @@
     </section>
 
 
+    <!-- WHAT THE KEY DOES -->
+
     <section class="card">
 
       <div class="card-header">
 
         <div>
-          <h3>Quick Start</h3>
+
+          <h3>
+            What the API key does
+          </h3>
+
+          <p>
+            Your key is an authentication credential,
+            not Luna's personality or model configuration.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <p>
+        Your Luna API key gives your project permission to
+        make requests to the Luna API. It tells the API that
+        the request is coming from an authorized developer.
+      </p>
+
+
+      <p>
+        The key does <strong>not</strong> contain Luna's
+        personality, your messages, or Luna's model.
+        Luna's personality is configured on the Luna server.
+      </p>
+
+
+      <p>
+        Your API key also does <strong>not</strong> give you
+        access to Luna's private model-provider credentials.
+        Those credentials remain securely stored on the
+        Luna server.
+      </p>
+
+
+      <div class="notice">
+
+        <strong>
+          Think of it like a password for your project.
+        </strong>
+
+        <span>
+          Your project uses the key to prove that it is
+          authorized to use the Luna API. Keep it secret
+          and do not publish it in publicly accessible code.
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- QUICK START -->
+
+    <section class="card">
+
+      <div class="card-header">
+
+        <div>
+
+          <h3>
+            Quick Start
+          </h3>
 
           <p>
             Send a message to Luna from your server.
           </p>
+
         </div>
 
       </div>
@@ -167,7 +336,10 @@ Content-Type: application/json
 }</code></pre>
 
 
-      <h4>Example response</h4>
+      <h4>
+        Example response
+      </h4>
+
 
       <pre><code>{
   "response": "Hello! I'm Luna..."
@@ -176,29 +348,216 @@ Content-Type: application/json
     </section>
 
 
+    <!-- EXAMPLE PROJECT -->
+
     <section class="card">
 
       <div class="card-header">
 
         <div>
-          <h3>Roblox</h3>
+
+          <h3>
+            Example: Website
+          </h3>
 
           <p>
-            Keep your Luna API key on the Roblox server.
-            Never put it inside a LocalScript.
+            Luna can be connected to many different kinds
+            of projects.
           </p>
+
+        </div>
+
+      </div>
+
+
+      <p>
+        Imagine you are building a website with an AI
+        assistant. Your website's server can send the
+        user's message to the Luna API along with your
+        Luna API key.
+      </p>
+
+
+      <div class="mini-flow">
+
+        <div>
+          <strong>Website</strong>
+          <span>User asks a question</span>
+        </div>
+
+        <div class="arrow">
+          →
+        </div>
+
+        <div>
+          <strong>Your Server</strong>
+          <span>Adds your Luna API key</span>
+        </div>
+
+        <div class="arrow">
+          →
+        </div>
+
+        <div>
+          <strong>Luna API</strong>
+          <span>Authenticates and processes it</span>
+        </div>
+
+        <div class="arrow">
+          →
+        </div>
+
+        <div>
+          <strong>Luna</strong>
+          <span>Returns an AI response</span>
         </div>
 
       </div>
 
 
       <div class="notice">
-        <strong>Important</strong>
+
+        <strong>
+          This is only an example.
+        </strong>
 
         <span>
-          Your Luna API key is a secret. Do not expose it
-          to players or put it in client-side code.
+          Luna can be integrated into websites, applications,
+          games, bots, automation tools, and many other
+          projects.
         </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- SECURITY -->
+
+    <section class="card">
+
+      <div class="card-header">
+
+        <div>
+
+          <h3>
+            Keep your API key secure
+          </h3>
+
+          <p>
+            Treat your Luna API key like a password.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="info-block">
+
+        <h4>
+          Do
+        </h4>
+
+        <p>
+          Store your key on your server or in a secure
+          environment variable.
+        </p>
+
+      </div>
+
+
+      <div class="info-block">
+
+        <h4>
+          Don't
+        </h4>
+
+        <p>
+          Put your API key directly into public source code,
+          public GitHub repositories, or client-side code
+          where users can inspect it.
+        </p>
+
+      </div>
+
+
+      <div class="notice">
+
+        <strong>
+          Important
+        </strong>
+
+        <span>
+          Anyone who obtains your Luna API key may be able
+          to make requests using your API access. Never
+          intentionally publish or share the key.
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- LUNA PERSONALITY -->
+
+    <section class="card">
+
+      <div class="card-header">
+
+        <div>
+
+          <h3>
+            Luna's personality
+          </h3>
+
+          <p>
+            Luna's core personality is built into the API.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <p>
+        Luna has a permanent personality configured by the
+        Luna server. Developers do not need to configure a
+        personality or provide a system prompt.
+      </p>
+
+
+      <p>
+        Your API key authenticates your project. It does
+        <strong>not</strong> change Luna's personality.
+      </p>
+
+
+      <div class="flow">
+
+        <div class="flow-item">
+          <strong>Your API Key</strong>
+          <span>Authenticates access</span>
+        </div>
+
+        <div class="arrow">
+          →
+        </div>
+
+        <div class="flow-item">
+          <strong>Luna API</strong>
+          <span>Handles the request</span>
+        </div>
+
+        <div class="arrow">
+          →
+        </div>
+
+        <div class="flow-item">
+          <strong>Luna</strong>
+          <span>Permanent personality</span>
+        </div>
+
       </div>
 
     </section>
