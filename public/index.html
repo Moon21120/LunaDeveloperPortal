@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>Luna Developer Portal</title>
 
@@ -117,6 +120,63 @@
         </p>
 
       </div>
+
+    </section>
+
+
+    <!-- TEST LUNA API -->
+
+    <section class="card">
+
+      <div class="card-header">
+
+        <div>
+
+          <h3>
+            Test Luna API
+          </h3>
+
+          <p>
+            Test your API directly from this portal.
+            No external API testing app is required.
+          </p>
+
+        </div>
+
+        <div class="key-icon">
+          🧪
+        </div>
+
+      </div>
+
+
+      <button id="testApiButton">
+        Test Luna API
+      </button>
+
+
+      <div id="testLoading" class="hidden">
+        Sending test message to Luna...
+      </div>
+
+
+      <div
+        id="testStatus"
+        class="hidden"
+      ></div>
+
+
+      <div
+        id="testResult"
+        class="hidden"
+      ></div>
+
+
+      <p class="warning">
+        This test uses your most recently created Luna API
+        key stored in this browser and sends the message
+        "Hello Luna! Are you working?".
+      </p>
 
     </section>
 
