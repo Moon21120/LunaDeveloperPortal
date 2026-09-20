@@ -13,6 +13,18 @@ const keyArea =
 const apiKeyElement =
   document.getElementById("apiKey");
 
+const testApiButton =
+  document.getElementById("testApiButton");
+
+const testLoading =
+  document.getElementById("testLoading");
+
+const testResult =
+  document.getElementById("testResult");
+
+const testStatus =
+  document.getElementById("testStatus");
+
 const STORAGE_KEY = "luna_api_keys";
 
 
@@ -120,8 +132,6 @@ createKeyButton.addEventListener(
       const newKey =
         data.apiKey;
 
-      // Save the key permanently
-      // in this browser's local storage.
       const keys =
         getSavedKeys();
 
@@ -129,7 +139,6 @@ createKeyButton.addEventListener(
 
       saveKeys(keys);
 
-      // Display it
       apiKeyElement.textContent =
         newKey;
 
@@ -139,6 +148,17 @@ createKeyButton.addEventListener(
 
       createKeyButton.textContent =
         "Create Another Key";
+
+      // Clear old test result when
+      // a new key is created.
+      if (testResult) {
+        testResult.classList.add("hidden");
+      }
+
+      if (testStatus) {
+        testStatus.textContent =
+          "Your new key is ready to test.";
+      }
 
     } catch (error) {
 
@@ -201,6 +221,125 @@ copyButton.addEventListener(
 
   }
 );
+
+
+// ============================================================
+// TEST LUNA API
+// ============================================================
+
+if (testApiButton) {
+
+  testApiButton.addEventListener(
+    "click",
+    async () => {
+
+      const keys =
+        getSavedKeys();
+
+      if (keys.length === 0) {
+
+        testStatus.textContent =
+          "Create a Luna API key first.";
+
+        testStatus.classList.remove(
+          "hidden"
+        );
+
+        return;
+      }
+
+      const apiKey =
+        keys[keys.length - 1];
+
+      testApiButton.disabled =
+        true;
+
+      testLoading.classList.remove(
+        "hidden"
+      );
+
+      testResult.classList.add(
+        "hidden"
+      );
+
+      testStatus.classList.add(
+        "hidden"
+      );
+
+      try {
+
+        const response =
+          await fetch("/v1/chat", {
+            method: "POST",
+
+            headers: {
+              "Content-Type":
+                "application/json",
+
+              "Authorization":
+                `Bearer ${apiKey}`
+            },
+
+            body: JSON.stringify({
+              message:
+                "Hello Luna! Are you working?"
+            })
+          });
+
+        const data =
+          await response.json();
+
+        if (!response.ok) {
+
+          throw new Error(
+            data.error ||
+            `API request failed with status ${response.status}.`
+          );
+        }
+
+        testResult.textContent =
+          data.response ||
+          JSON.stringify(
+            data,
+            null,
+            2
+          );
+
+        testResult.classList.remove(
+          "hidden"
+        );
+
+        testStatus.textContent =
+          "✓ Luna API is working.";
+
+        testStatus.classList.remove(
+          "hidden"
+        );
+
+      } catch (error) {
+
+        testStatus.textContent =
+          `✕ Luna API test failed: ${error.message}`;
+
+        testStatus.classList.remove(
+          "hidden"
+        );
+
+      } finally {
+
+        testApiButton.disabled =
+          false;
+
+        testLoading.classList.add(
+          "hidden"
+        );
+
+      }
+
+    }
+  );
+
+}
 
 
 // ============================================================
